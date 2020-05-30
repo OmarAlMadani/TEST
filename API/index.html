@@ -1,0 +1,286 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit your mix</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body, input, select {
+            padding: 0;
+            margin: 0;
+            outline: none;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 16px;
+            color: #eee;
+        }
+
+        h1, h3 {
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        h3 {
+            color: #1c87c9;
+        }
+
+        .main-block, .info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-block {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100%;
+            background: url("/uploads/media/default/0001/01/e7a97bd9b2d25886cc7b9115de83b6b28b73b90b.jpeg") no-repeat center;
+            background-size: cover;
+        }
+
+        form {
+            width: 80%;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        input, select {
+            padding: 5px;
+            margin-bottom: 20px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #eee;
+        }
+
+            input::placeholder {
+                color: #eee;
+            }
+
+        option {
+            background: black;
+            border: none;
+        }
+
+        .metod {
+            display: flex;
+        }
+
+        input[type=radio] {
+            display: none;
+        }
+
+        label {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 20px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #eee;
+        }
+
+            label.radio {
+                position: relative;
+                display: inline-block;
+                margin-right: 20px;
+                text-indent: 32px;
+                cursor: pointer;
+            }
+
+                label.radio:before {
+                    content: "";
+                    position: absolute;
+                    top: -1px;
+                    left: 0;
+                    width: 17px;
+                    height: 17px;
+                    border-radius: 50%;
+                    border: 2px solid #1c87c9;
+                }
+
+                label.radio:after {
+                    content: "";
+                    position: absolute;
+                    width: 8px;
+                    height: 4px;
+                    top: 5px;
+                    left: 5px;
+                    border-bottom: 3px solid #1c87c9;
+                    border-left: 3px solid #1c87c9;
+                    transform: rotate(-45deg);
+                    opacity: 0;
+                }
+
+        input[type=radio]:checked + label:after {
+            opacity: 1;
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto 0;
+            border: none;
+            border-radius: 5px;
+            background: #1c87c9;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+            button:hover {
+                background: #095484;
+            }
+
+        @media (min-width: 568px) {
+            .info {
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+
+            input {
+                width: 46%;
+            }
+
+                input.fname {
+                    width: 100%;
+                }
+
+            select {
+                width: 48%;
+            }
+
+            #speaker1 {
+                display: none;
+            }
+
+            #speaker2 {
+                display: none;
+            }
+
+            #speaker3 {
+                display: none;
+            }
+
+            #speaker4 {
+                display: none;
+            }
+
+            #speaker5 {
+                display: none;
+            }
+        }
+    </style>
+
+    <script>
+
+
+        var data = new FormData();
+        data.append("client_id", "04451f957470ef9524470b29dbe2bd");
+        data.append("client_secret", "40ee5d35e57b2ff9257e332123f9d5");
+        data.append("redirect_uri", "http://localhost:10202");
+        data.append("grant_type", "authorization_code");
+        data.append("code", "f6a20891bf31275a909d83910ef7aa");
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("POST", "https://auphonic.com/oauth2/token/");
+
+        xhr.send(data);
+
+    </script>
+
+</head>
+<body>
+    <div class="main-block">
+        <h1>Submit your mix</h1>
+        <form action="/">
+          
+                <input class="fname" type="text" name="name" placeholder="Episode ticket name">
+                <input class="fname" type="text" name="name" placeholder="Asset">
+                <br>
+
+                <script type="text/javascript">
+                    function ChangeDropdowns(value) {
+                        if (value == "1") {
+                            document.getElementById('speaker1').style.display = 'block';
+                            document.getElementById('speaker2').style.display = 'none';
+                            document.getElementById('speaker3').style.display = 'none';
+                            document.getElementById('speaker4').style.display = 'none';
+                            document.getElementById('speaker5').style.display = 'none';
+
+                        }
+                        else if (value == "2") {
+                            document.getElementById('speaker1').style.display = 'block';
+                            document.getElementById('speaker2').style.display = 'block';
+                            document.getElementById('speaker3').style.display = 'none';
+                            document.getElementById('speaker4').style.display = 'none';
+                            document.getElementById('speaker5').style.display = 'none';
+
+                        }
+                        else if (value == "3") {
+                            document.getElementById('speaker1').style.display = 'block';
+                            document.getElementById('speaker2').style.display = 'block';
+                            document.getElementById('speaker3').style.display = 'block';
+                            document.getElementById('speaker4').style.display = 'none';
+                            document.getElementById('speaker5').style.display = 'none';
+
+                        }
+                        else if (value == "4") {
+                            document.getElementById('speaker1').style.display = 'block';
+                            document.getElementById('speaker2').style.display = 'block';
+                            document.getElementById('speaker3').style.display = 'block';
+                            document.getElementById('speaker4').style.display = 'block';
+                            document.getElementById('speaker5').style.display = 'none';
+
+                        }
+                        else if (value == "5") {
+                            document.getElementById('speaker1').style.display = 'block';
+                            document.getElementById('speaker2').style.display = 'block';
+                            document.getElementById('speaker3').style.display = 'block';
+                            document.getElementById('speaker4').style.display = 'block';
+                            document.getElementById('speaker5').style.display = 'block';
+                        }
+                    }
+                </script>
+
+                <select onchange="ChangeDropdowns(this.value);">
+                    <option value="number" disabled selected>Number of speakers</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+               
+                
+               
+                <input id="speaker1" class="fname" type="file" name="files[0]" placeholder="Speaker 1" onchange="createProduction()">
+                <input id="speaker2" class="fname" type="file" name="files[1]" placeholder="Speaker 2">
+                <input id="speaker3" class="fname" type="file" name="files[2]" placeholder="Speaker 3">
+                <input id="speaker4" class="fname" type="file" name="files[3]" placeholder="Speaker 4">
+                <input id="speaker5" class="fname" type="file" name="files[4]" placeholder="Speaker 5">
+
+         
+
+            <button href="/" class="button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

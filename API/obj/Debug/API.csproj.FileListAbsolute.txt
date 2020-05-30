@@ -1,0 +1,7 @@
+C:\Users\oalmada1\source\repos\API\API\bin\TypeScriptHTMLApp1.dll.config
+C:\Users\oalmada1\source\repos\API\API\bin\TypeScriptHTMLApp1.dll
+C:\Users\oalmada1\source\repos\API\API\bin\TypeScriptHTMLApp1.pdb
+C:\Users\oalmada1\source\repos\API\API\obj\Debug\API.csprojAssemblyReference.cache
+C:\Users\oalmada1\source\repos\API\API\obj\Debug\API.csproj.CoreCompileInputs.cache
+C:\Users\oalmada1\source\repos\API\API\obj\Debug\TypeScriptHTMLApp1.dll
+C:\Users\oalmada1\source\repos\API\API\obj\Debug\TypeScriptHTMLApp1.pdb
